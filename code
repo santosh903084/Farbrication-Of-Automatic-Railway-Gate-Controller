@@ -1,0 +1,52 @@
+#include <Servo.h>
+int ir1=2;
+int ir2=7;
+int buzz=12;
+int red1=9;
+int red2=13;
+int green1 = 10;
+int green2 = 11;
+Servo myservo1;
+Servo myservo2;
+void setup()
+{
+  pinMode(ir1,INPUT);
+  pinMode(ir2,INPUT);
+  pinMode(red2,OUTPUT);
+  pinMode(buzz,OUTPUT);
+  pinMode(green2,OUTPUT);
+  pinMode(green1,OUTPUT);
+  pinMode(red1,OUTPUT);
+  myservo1.attach(3);
+  myservo2.attach(5);
+  myservo1.write(0);
+   myservo2.write(0);
+   delay(100);
+  
+  
+}
+void loop()
+{
+  if(digitalRead(ir1)==LOW)
+  {
+    myservo1.write(0);
+    myservo2.write(0);
+    delay(100);
+    digitalWrite(red2,LOW);
+    digitalWrite(buzz,1);
+    digitalWrite(green2,HIGH);
+    digitalWrite(green1,HIGH);
+    digitalWrite(red1,LOW);
+  }
+  else if(digitalRead(ir2)==LOW)
+  {
+    myservo1.write(90);
+  myservo2.write(90);
+  delay(100);
+    digitalWrite(red2,HIGH);
+    digitalWrite(buzz,0);
+    digitalWrite(green2,LOW);
+    digitalWrite(green1,LOW);
+    digitalWrite(red1,HIGH);
+    }
+}
