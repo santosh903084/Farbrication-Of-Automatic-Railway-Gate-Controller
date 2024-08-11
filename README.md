@@ -6,7 +6,9 @@ In general, Railway gates are opened or closed manually by a gate keeper. The in
 To avoid the human intervention at level crossings completely, we need to automate the process of railway gate control.
 
 #Project Components:
+
 #Microcontroller Section:
+
 AT89C51 MCU ,
 11.0592 MHz Quartz Crystal , 
 2 x 33pF Ceramic Capacitor, 
